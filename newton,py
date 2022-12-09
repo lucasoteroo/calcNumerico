@@ -1,0 +1,28 @@
+#MÉTODO de Newton
+import math
+
+
+
+def f(x):
+  return math.exp(x) - 2 * x -1
+
+#Função phi(x)
+def f_derivada1(x):
+  return math.exp(x) - 2
+
+#PRECISÃO DE 4 CASAS DECIMAIS
+erro_max=0.0001
+
+# X inicial
+x_0=1
+x = x_0
+
+cont=0
+while math.fabs(f(x))>erro_max:
+  cont=cont+1
+  x = x -(f(x)/f_derivada1(x))
+        
+
+print("A solução encontrada foi", x)
+print(" ")
+print("teve", cont, "interações")
